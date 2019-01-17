@@ -1,0 +1,100 @@
+<html><head><title>Пятнашки</title>
+<link href="style.css" rel="stylesheet" type="text/css">
+<script language="javascript"><!--
+str_vict="Поздравляем! Вы собрали «Пятнашки»!";
+
+function zamen(n){
+var n2;
+for ( var i=0; 16>i; ++i ){if (document.images[i].alt==" "){n2=i;}}
+if ((n-n2==4) || (n2-n==4) || ((n-n2==1)&&(Math.floor(n/4)==Math.floor(n2/4))) || ((n2-n==1)&&(Math.floor(n/4)==Math.floor(n2/4))) ){
+document.images[n2].src = document.images[n].alt+".gif";
+document.images[n].src = "16.gif";
+document.images[n2].alt = document.images[n].alt;
+document.images[n].alt = " ";}
+n2=0
+for ( var i=0; 15>i; ++i ){if (document.images[i].alt==i+1){n2=++n2;}}
+if (n2==15) {alert(str_vict);zan();}}
+
+function zan(){
+var n;
+var n2;
+for ( var i=0; 16>i; ++i ){if (document.images[i].alt==" "){n2=i;}}
+for ( var j=0; 777>j; ++j ){
+ n = Math.floor(Math.random()*16);
+ if ((n-n2==4) || (n2-n==4) || ((n-n2==1)&&(Math.floor(n/4)==Math.floor(n2/4))) || ((n2-n==1)&&(Math.floor(n/4)==Math.floor(n2/4))) ){
+  document.images[n2].alt = document.images[n].alt;
+  document.images[n].alt = " ";
+  n2=n;
+ }
+}
+for ( var i=0; 16>i; ++i ){
+  if (document.images[i].alt==" ") 
+   {document.images[i].src = "16.gif";}
+  else 
+   {document.images[i].src = document.images[i].alt+".gif";}
+ }
+}
+//--></script>
+</head>
+<body onload="zan();">
+<table cellpadding="0" cellspacing="0" border="0" height="100%" align="center"><tr><td valign="middle">
+<table border="1" cellspacing="0" cellpadding="0" align="center" valign="middle">
+ <tr>
+  <td>
+   <img src="1.gif" onclick="zamen(0)" alt="1" width="50" height="50">
+  </td>
+  <td>
+   <img src="2.gif" onclick="zamen(1)" alt="2" width="50" height="50">
+  </td>
+  <td>
+   <img src="3.gif" onclick="zamen(2)" alt="3" width="50" height="50">
+  </td>
+  <td>
+   <img src="4.gif" onclick="zamen(3)" alt="4" width="50" height="50">
+  </td>
+ </tr>
+ <tr>
+  <td>
+   <img src="5.gif" onclick="zamen(4)" alt="5" width="50" height="50">
+  </td>
+  <td>
+   <img src="6.gif" onclick="zamen(5)" alt="6" width="50" height="50">
+  </td>
+  <td>
+   <img src="7.gif" onclick="zamen(6)" alt="7" width="50" height="50">
+  </td>
+  <td>
+   <img src="8.gif" onclick="zamen(7)" alt="8" width="50" height="50">
+  </td>
+ </tr>
+ <tr>
+  <td>
+   <img src="9.gif" onclick="zamen(8)" alt="9" width="50" height="50">
+  </td>
+  <td>
+   <img src="10.gif" onclick="zamen(9)" alt="10" width="50" height="50">
+  </td>
+  <td>
+   <img src="11.gif" onclick="zamen(10)" alt="11" width="50" height="50">
+  </td>
+  <td>
+   <img src="12.gif" onclick="zamen(11)" alt="12" width="50" height="50">
+  </td>
+ </tr>
+ <tr>
+  <td>
+   <img src="13.gif" onclick="zamen(12)" alt="13" width="50" height="50">
+  </td>
+  <td>
+   <img src="14.gif" onclick="zamen(13)" alt="14" width="50" height="50">
+  </td>
+  <td>
+   <img src="15.gif" onclick="zamen(14)" alt="15" width="50" height="50">
+  </td>
+  <td>
+   <img src="16.gif" onclick="zamen(15)" alt=" " width="50" height="50">
+  </td>
+ </tr>
+</table>
+</td></tr></table>
+</body></html>
